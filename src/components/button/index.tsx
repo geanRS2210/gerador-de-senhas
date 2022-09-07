@@ -1,5 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
 import './style.css';
+=======
+>>>>>>> d29de27ea1d49331f7d060186c7873bb1f4b3c75
 
 interface props {
   text: string;

@@ -8,14 +8,20 @@ function App(): JSX.Element {
   const [onGenerator, setGenerator] = useState(false);
   const [password, setPassword] = useState('');
 
+<<<<<<< HEAD
   useEffect((): void => {
     console.log('Atualizei meu componente');
+=======
+  useEffect(() => {
+    console.log('carreguei meu componente');
+>>>>>>> d29de27ea1d49331f7d060186c7873bb1f4b3c75
   }, [password]);
 
   const random = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min) + min);
   };
 
+<<<<<<< HEAD
   const letterGen = (letters: string[], min: number, max: number): string => {
     return String(letters.splice(random(min, max), 1));
   };
@@ -51,6 +57,23 @@ function App(): JSX.Element {
 
   const handleClick = (): void => {
     returnPassword(15);
+=======
+  const letterGen = (letters: string[]): string => {
+    return String(letters.splice(random(0, 25), 1));
+  };
+
+  const generator = (): string => {
+    const num: number = random(0, 8);
+    const letter = 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z';
+    const MinAlfabeto: string = letterGen(letter.split(','));
+    const MaiAlfabeto: string = letterGen(letter.split(','));
+    setGenerator(true);
+    return num + MinAlfabeto + MaiAlfabeto.toUpperCase();
+  };
+
+  const handleClick = (): void => {
+    setPassword(generator());
+>>>>>>> d29de27ea1d49331f7d060186c7873bb1f4b3c75
   };
   return (
     <div className="App">
